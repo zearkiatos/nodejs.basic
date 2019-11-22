@@ -1,5 +1,5 @@
 FROM node:12.13.0
-RUN mkdir /usr/local/nvm
+RUN mkdir /usr/src/app
 USER root
 RUN apt-get update && \
 apt-get upgrade -y 
