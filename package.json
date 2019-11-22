@@ -1,0 +1,27 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "Esto es un proyecto",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "say":"cowsay Hola"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zearkiatos/nodejs.basic.git"
+  },
+  "keywords": [
+    "Project",
+    "Node"
+  ],
+  "author": "Pedro Capriles",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zearkiatos/nodejs.basic/issues"
+  },
+  "homepage": "https://github.com/zearkiatos/nodejs.basic#readme",
+  "dependencies": {
+    "cowsay": "^1.4.0"
+  }
+}
