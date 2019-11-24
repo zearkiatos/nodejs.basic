@@ -1,0 +1,26 @@
+{
+  "name": "nodejsbasic",
+  "version": "1.0.0",
+  "description": "Basic course of nodejs",
+  "main": "index.js",
+  "dependencies": {
+    "cowsay": "^1.4.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zearkiatos/nodejs.basic.git"
+  },
+  "keywords": [
+    "nodejs"
+  ],
+  "author": "Pedro Capriles",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zearkiatos/nodejs.basic/issues"
+  },
+  "homepage": "https://github.com/zearkiatos/nodejs.basic#readme"
+}
