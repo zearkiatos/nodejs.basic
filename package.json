@@ -4,7 +4,8 @@
   "description": "Basic course of nodejs",
   "main": "index.js",
   "dependencies": {
-    "cowsay": "^1.4.0"
+    "cowsay": "^1.4.0",
+    "nodemon": "^2.0.1"
   },
   "devDependencies": {},
   "scripts": {
