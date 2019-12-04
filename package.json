@@ -4,7 +4,10 @@
   "description": "Basic course of nodejs",
   "main": "index.js",
   "dependencies": {
-    "cowsay": "^1.4.0"
+    "cowsay": "^1.4.0",
+    "dotenv": "^8.2.0",
+    "mongo": "^0.1.0",
+    "mongodb": "^3.3.5"
   },
   "devDependencies": {},
   "scripts": {
