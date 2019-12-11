@@ -1,7 +1,8 @@
 const MongoClient = require("mongodb").MongoClient;
-const { DB_HOST, DB_PORT, DB_NAME } = require("./config");
-const connectionUrl = `mongodb://${DB_HOST}:${DB_PORT}`;
-console.log(DB_HOST);
+const { config } = require("./config");
+const connectionUrl = `mongodb://${config.DB_HOST}:${config.DB_PORT}`;
+console.log(connectionUrl);
+console.log(config.DB_HOST);
 module.exports = (() => {
   let instance = null,
     isDisconnecting = false;
@@ -14,7 +15,8 @@ module.exports = (() => {
             }
             console.log("Conectado satisfactoriamente al servidor de Mongo!");
             instance = client;
-            resolve(client.db(DB_NAME));
+            console.log(client);
+            resolve(client.db(config.DB_NAME));
         });
       })
   }

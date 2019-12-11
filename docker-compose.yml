@@ -1,6 +1,17 @@
-version: "3"
+version: "3.7"
 
 services:
+  db:
+    env_file:
+      - db.env
+    build:
+      context: .
+      dockerfile: mongo.dockerfile
+    container_name: mongo
+    volumes:
+      - /data/db:/data/db
+    ports:
+      - "27017:27017"
   app:
     env_file: 
       - .env
@@ -14,16 +25,3 @@ services:
       - "3000:3000"
     depends_on: 
       - db
-  db:
-    env_file:
-      - db.env
-    build:
-      context: .
-      dockerfile: mongo.dockerfile
-    container_name: mongodb
-    volumes:
-      - "mongo-data:/docker-volumen"
-    ports:
-      - "27017:27017"
-volumes: 
-  mongo-data:
