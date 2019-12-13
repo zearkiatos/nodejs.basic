@@ -12,6 +12,8 @@ services:
       - /data/db:/data/db
     ports:
       - "27017:27017"
+    networks:
+      mongonetwork:
   app:
     env_file: 
       - .env
@@ -25,3 +27,6 @@ services:
       - "3000:3000"
     depends_on: 
       - db
+networks:
+  mongonetwork:
+    driver: bridge
