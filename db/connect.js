@@ -7,11 +7,12 @@ module.exports = (() => {
 
   function connect() {
       return new Promise((resolve, reject)=>{
-        MongoClient.connect(`${connectionUrl}`,{useNewUrlParser: true}, function(err,client){
+        MongoClient.connect(`${connectionUrl}`,{useNewUrlParser: true,authSource:'admin'}, function(err,client){
             if(err) {
                 reject(err);
             }
             console.log("Conectado satisfactoriamente al servidor de Mongo!");
+            console.log(client.db(config.DB_NAME));
             instance = client;
             resolve(client.db(config.DB_NAME));
         });
@@ -23,19 +24,17 @@ module.exports = (() => {
           isDisconnecting = true;
           console.log("Desconectado instancia de Mongo");
           return new Promise((resolve, reject)=>{
-            if(err) {
-                reject(err);
-                isDisconnecting = false;
-                return;
-            }
-            console.log("Instancia de Mongo desconectada!");
-            resolve();
+              instance.close((err, result)=>{
+                if (err) { reject(err); isDisconnecting=false; return; }
+                console.log("Instancia de Mongo desconectada!");
+                resolve();
+            });
           })
       }
   }
   return {
       connect,
       disconnect,
-      instance
+      instance: () =>instance
   }
 })();

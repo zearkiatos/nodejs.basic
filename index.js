@@ -1,6 +1,8 @@
 const express = require("express");
 const app = express();
-const { PORT } = require("./config");
+require('dotenv').config();
+const PORT  = process.env.PORT;
+const mongo = require("./db/connect");
 
 require("./routes/api")(app);
 require("./routes/views")(app);
